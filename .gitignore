@@ -12,3 +12,4 @@ composer.lock
 *.log
 auth.json
 /art/*.png
+/.github/workflows/

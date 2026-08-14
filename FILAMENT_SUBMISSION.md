@@ -23,7 +23,7 @@ Upload from this repo (light theme, 16:9):
 
 | Field | Value |
 | --- | --- |
-| **Versions** | `5.x` |
+| **Versions** | `4.x` and `5.x` |
 | **Categories** | Integration (add Action / Developer Tool only if the form allows multi-select and they fit) |
 | **Dark theme support** | Yes |
 | **Translation support** | Yes |

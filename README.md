@@ -2,13 +2,60 @@
 
 <img src="https://raw.githubusercontent.com/Johnrivera7/filament-transbank-webpay/main/art/banner.jpg" alt="Transbank Webpay Filament plugin" class="filament-hidden" />
 
-A Filament v5 plugin that integrates **Transbank Webpay Plus** (Chile) into your Laravel application: credentials UI, logos, POST `token_ws` redirects, and create / commit / status / refund helpers on the [official Transbank SDK](https://github.com/TransbankDevelopers/transbank-sdk-php).
+<p align="center">
+    <a href="https://filamentphp.com/docs/4.x/panels/installation">
+        <img alt="FILAMENT 4.x" src="https://img.shields.io/badge/FILAMENT-4.x-EBB304?style=for-the-badge">
+    </a>
+    <a href="https://filamentphp.com/docs/5.x/panels/installation">
+        <img alt="FILAMENT 5.x" src="https://img.shields.io/badge/FILAMENT-5.x-EBB304?style=for-the-badge">
+    </a>
+</p>
+
+<p align="center">
+    <a href="https://packagist.org/packages/johnrivera7/filament-transbank-webpay">
+        <img alt="Latest Version on Packagist" src="https://img.shields.io/packagist/v/johnrivera7/filament-transbank-webpay.svg?style=flat-square&label=packagist">
+    </a>
+    <a href="https://packagist.org/packages/johnrivera7/filament-transbank-webpay">
+        <img alt="Total Downloads" src="https://img.shields.io/packagist/dt/johnrivera7/filament-transbank-webpay.svg?style=flat-square">
+    </a>
+    <a href="https://github.com/Johnrivera7/filament-transbank-webpay/blob/main/LICENSE">
+        <img alt="License" src="https://img.shields.io/packagist/l/johnrivera7/filament-transbank-webpay.svg?style=flat-square">
+    </a>
+    <a href="https://github.com/Johnrivera7/filament-transbank-webpay">
+        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/Johnrivera7/filament-transbank-webpay?style=flat-square">
+    </a>
+    <a href="https://github.com/Johnrivera7/filament-transbank-webpay/issues">
+        <img alt="GitHub Issues" src="https://img.shields.io/github/issues/Johnrivera7/filament-transbank-webpay?style=flat-square">
+    </a>
+    <a href="https://github.com/Johnrivera7/filament-transbank-webpay/releases">
+        <img alt="Latest release" src="https://img.shields.io/github/v/release/Johnrivera7/filament-transbank-webpay?style=flat-square&label=release">
+    </a>
+    <a href="https://github.com/Johnrivera7/filament-transbank-webpay/actions/workflows/tests.yml">
+        <img alt="Tests" src="https://img.shields.io/github/actions/workflow/status/Johnrivera7/filament-transbank-webpay/tests.yml?style=flat-square&label=tests" class="filament-hidden">
+    </a>
+</p>
+
+<p align="center">
+    <img alt="PHP 8.2+" src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=flat-square&logo=php&logoColor=white">
+    <img alt="Laravel 11+" src="https://img.shields.io/badge/Laravel-11%2B%20%2F%2012%2B-FF2D20?style=flat-square&logo=laravel&logoColor=white">
+    <img alt="Livewire 3/4" src="https://img.shields.io/badge/Livewire-3.x%20%2F%204.x-FB70A9?style=flat-square">
+    <img alt="Filament 4/5" src="https://img.shields.io/badge/Filament-4.x%20%2F%205.x-FDAE4B?style=flat-square">
+    <img alt="Built with Transbank SDK" src="https://img.shields.io/badge/Built%20with-Transbank%20SDK-6D2077?style=flat-square">
+    <img alt="MIT" src="https://img.shields.io/badge/License-MIT-green?style=flat-square">
+</p>
+
+A Filament plugin that integrates **Transbank Webpay Plus** (Chile) into your Laravel application: credentials UI, logos, POST `token_ws` redirects, and create / commit / status / refund helpers on the [official Transbank SDK](https://github.com/TransbankDevelopers/transbank-sdk-php).
+
+> **Open source (MIT).** Badges like *Buy license* / *Private Composer package* / *Proprietary documentation* apply to paid Filament plugins only — this package is free on [Packagist](https://packagist.org/packages/johnrivera7/filament-transbank-webpay).
 
 ## Requirements
 
-- PHP 8.2+
-- Laravel 11+ / 12+
-- Filament 5.x
+| Stack | Versions |
+| --- | --- |
+| PHP | 8.2+ |
+| Laravel | 11.28+ / 12+ |
+| Filament | **4.x** or **5.x** |
+| Livewire | 3.x (with Filament 4) / 4.x (with Filament 5) |
 
 ## Installation
 
@@ -121,7 +168,7 @@ $schema->components([
 
 ```bash
 composer install
-./vendor/bin/phpunit
+composer test
 ```
 
 ## Security
