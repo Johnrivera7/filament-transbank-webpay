@@ -18,6 +18,15 @@ After that:
 composer require johnrivera7/filament-transbank-webpay
 ```
 
+## Optional: GitHub Actions
+
+The GitHub token used from this environment lacks the `workflow` scope, so CI was not pushed automatically.
+
+To enable the tests badge:
+
+1. Grant your PAT the **workflow** scope (or use the GitHub web UI), then add `.github/workflows/tests.yml` from `PACKAGIST.md` / your local copy.
+2. Or create the workflow file in the GitHub UI: **Actions → New workflow**.
+
 ## Optional: Packagist API token
 
 If you want CLI submit later: Packagist → Profile → Settings → API tokens.

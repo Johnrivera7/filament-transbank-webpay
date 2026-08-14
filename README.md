@@ -30,8 +30,8 @@
     <a href="https://github.com/Johnrivera7/filament-transbank-webpay/releases">
         <img alt="Latest release" src="https://img.shields.io/github/v/release/Johnrivera7/filament-transbank-webpay?style=flat-square&label=release">
     </a>
-    <a href="https://github.com/Johnrivera7/filament-transbank-webpay/actions/workflows/tests.yml">
-        <img alt="Tests" src="https://img.shields.io/github/actions/workflow/status/Johnrivera7/filament-transbank-webpay/tests.yml?style=flat-square&label=tests" class="filament-hidden">
+    <a href="https://github.com/Johnrivera7/filament-transbank-webpay/tree/main/tests">
+        <img alt="PHPUnit tests" src="https://img.shields.io/badge/tests-PHPUnit-6D2077?style=flat-square" class="filament-hidden">
     </a>
 </p>
 
