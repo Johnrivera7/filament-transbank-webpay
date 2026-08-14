@@ -9,42 +9,40 @@
     .stage {
       width: 1280px; height: 720px;
       background:
-        radial-gradient(700px 420px at 70% 30%, rgba(0,163,224,.22), transparent 60%),
-        linear-gradient(145deg, #ffffff, #eef4f9);
+        radial-gradient(720px 420px at 72% 28%, rgba(208,0,112,.16), transparent 60%),
+        radial-gradient(640px 380px at 18% 80%, rgba(109,32,119,.12), transparent 55%),
+        linear-gradient(145deg, #ffffff, #f7f2f9);
       display: grid; place-items: center;
       padding: 48px;
     }
     .panel {
-      width: 920px;
+      width: 980px;
       background: #fff;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #eadfee;
       border-radius: 22px;
-      box-shadow: 0 30px 60px rgba(15,23,42,.12);
-      padding: 42px 48px;
+      box-shadow: 0 30px 60px rgba(109,32,119,.14);
+      padding: 48px 56px;
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 28px;
-      align-items: center;
+      gap: 18px;
+      justify-items: start;
+      position: relative;
+      overflow: hidden;
     }
-    .mark {
-      width: 96px; height: 96px; border-radius: 24px;
-      background: #0b1f33; color: #00A3E0;
-      display: grid; place-items: center;
-      font-weight: 800; font-size: 28px; letter-spacing: -0.05em;
+    .panel::before {
+      content: "";
+      position: absolute; inset: 0 auto 0 0; width: 8px;
+      background: linear-gradient(180deg, #6D2077, #D00070, #009CDD);
     }
-    h1 { font-size: 44px; letter-spacing: -0.03em; color: #0b1f33; margin-bottom: 10px; }
-    h1 span { color: #00A3E0; }
-    p { font-size: 20px; color: #64748b; }
+    img.logo { height: 72px; width: auto; display: block; }
+    p { font-size: 22px; color: #75787B; padding-left: 4px; }
+    p strong { color: #6D2077; font-weight: 700; }
   </style>
 </head>
 <body>
   <div class="stage">
     <div class="panel">
-      <div class="mark">WP</div>
-      <div>
-        <h1>Transbank <span>Webpay</span></h1>
-        <p>Filament v5 · Webpay Plus payments for Chile</p>
-      </div>
+      <img class="logo" src="brand/webpay-plus.png" alt="Webpay Plus">
+      <p><strong>Filament v5</strong> · Webpay Plus payments for Chile</p>
     </div>
   </div>
 </body>

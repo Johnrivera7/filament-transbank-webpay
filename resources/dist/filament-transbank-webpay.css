@@ -1,4 +1,15 @@
+.ftw-page .ftw-brand {
+    --ftw-purple: #6D2077;
+    --ftw-magenta: #D00070;
+    --ftw-cyan: #009CDD;
+    --ftw-gray: #75787B;
+}
+
 .ftw-page .ftw-brand img {
-    max-width: 180px;
+    max-width: 220px;
     object-fit: contain;
+}
+
+.ftw-page .ftw-brand p {
+    color: var(--ftw-gray);
 }

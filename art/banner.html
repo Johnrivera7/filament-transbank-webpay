@@ -10,17 +10,18 @@
       height: 720px;
       overflow: hidden;
       font-family: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
+      background: #fff;
+      color: #1f1f1f;
     }
     .stage {
       width: 1280px;
       height: 720px;
       position: relative;
       background:
-        radial-gradient(900px 480px at 85% 15%, rgba(0, 163, 224, 0.18), transparent 60%),
-        radial-gradient(700px 400px at 10% 90%, rgba(11, 31, 51, 0.08), transparent 55%),
-        linear-gradient(160deg, #ffffff 0%, #f1f5f9 55%, #e8eef5 100%);
+        radial-gradient(820px 460px at 88% 12%, rgba(208, 0, 112, 0.14), transparent 58%),
+        radial-gradient(720px 420px at 8% 88%, rgba(109, 32, 119, 0.12), transparent 55%),
+        radial-gradient(500px 320px at 55% 100%, rgba(0, 156, 221, 0.10), transparent 50%),
+        linear-gradient(155deg, #ffffff 0%, #faf7fb 48%, #f4f0f7 100%);
       padding: 48px 56px;
       display: grid;
       grid-template-columns: 1.05fr 1fr;
@@ -32,53 +33,60 @@
       align-items: center;
       gap: 8px;
       background: #fff;
-      border: 1px solid #e2e8f0;
-      color: #334155;
+      border: 1px solid #eadfee;
+      color: #6D2077;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 650;
       padding: 8px 12px;
       border-radius: 999px;
-      margin-bottom: 18px;
-      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      margin-bottom: 20px;
+      box-shadow: 0 1px 2px rgba(109, 32, 119, 0.06);
     }
     .dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: #00A3E0;
+      background: #D00070;
+    }
+    .logo-lockup {
+      height: 56px;
+      width: auto;
+      display: block;
+      margin-bottom: 22px;
     }
     h1 {
-      font-size: 46px;
-      line-height: 1.1;
+      font-size: 42px;
+      line-height: 1.12;
       letter-spacing: -0.03em;
       font-weight: 760;
-      color: #0b1f33;
-      margin-bottom: 16px;
-      max-width: 11ch;
+      color: #6D2077;
+      margin-bottom: 14px;
+      max-width: 14ch;
     }
-    h1 span { color: #00A3E0; }
+    h1 span { color: #D00070; }
     .lead {
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.45;
-      color: #475569;
-      max-width: 34ch;
-      margin-bottom: 28px;
+      color: #5b5e62;
+      max-width: 36ch;
+      margin-bottom: 26px;
     }
     .pills { display: flex; flex-wrap: wrap; gap: 10px; }
     .pill {
       background: #fff;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #eadfee;
       border-radius: 10px;
       padding: 10px 14px;
       font-size: 13px;
-      font-weight: 600;
-      color: #334155;
+      font-weight: 650;
+      color: #6D2077;
     }
+    .pill.alt { color: #D00070; border-color: #f3c6dc; }
     .card-wrap {
       position: relative;
-      filter: drop-shadow(0 24px 48px rgba(15, 23, 42, 0.12));
+      filter: drop-shadow(0 24px 48px rgba(109, 32, 119, 0.14));
     }
     .card {
       background: #fff;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #eadfee;
       border-radius: 18px;
       overflow: hidden;
     }
@@ -87,28 +95,23 @@
       align-items: center;
       justify-content: space-between;
       padding: 18px 22px;
-      border-bottom: 1px solid #e2e8f0;
-      background: #fcfdff;
+      border-bottom: 1px solid #f0e6f3;
+      background: linear-gradient(180deg, #fcf9fd, #fff);
     }
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 700;
-      color: #0b1f33;
+      color: #6D2077;
       font-size: 15px;
     }
-    .logo {
-      width: 36px; height: 36px; border-radius: 10px;
-      background: #0b1f33; color: #00A3E0;
-      display: grid; place-items: center;
-      font-size: 11px; font-weight: 800; letter-spacing: -0.04em;
-    }
+    .brand img { height: 28px; width: auto; display: block; }
     .env {
       font-size: 12px;
       font-weight: 700;
-      color: #0369a1;
-      background: #e0f2fe;
+      color: #D00070;
+      background: #fce8f2;
       border-radius: 999px;
       padding: 6px 10px;
     }
@@ -117,19 +120,19 @@
       display: block;
       font-size: 12px;
       font-weight: 650;
-      color: #64748b;
+      color: #75787B;
       margin-bottom: 6px;
     }
     .field .input {
       height: 42px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #d9cfe0;
       border-radius: 10px;
       background: #fff;
       display: flex;
       align-items: center;
       padding: 0 12px;
       font-size: 14px;
-      color: #0f172a;
+      color: #1f1f1f;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -139,9 +142,9 @@
       align-items: center;
       margin-top: 4px;
     }
-    .hint { font-size: 12px; color: #94a3b8; }
+    .hint { font-size: 12px; color: #75787B; }
     .btn {
-      background: #0b1f33;
+      background: #6D2077;
       color: #fff;
       border: 0;
       border-radius: 10px;
@@ -149,12 +152,16 @@
       font-size: 13px;
       font-weight: 700;
     }
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #6D2077 0%, #D00070 55%, #009CDD 100%);
+    }
     .corner {
       position: absolute;
       right: 56px;
       bottom: 28px;
       font-size: 12px;
-      color: #94a3b8;
+      color: #75787B;
       font-weight: 600;
     }
   </style>
@@ -163,20 +170,21 @@
   <div class="stage">
     <div>
       <div class="badge"><span class="dot"></span> Filament v5 · Chile</div>
-      <h1>Transbank <span>Webpay</span></h1>
-      <p class="lead">Credentials UI, official SDK helpers, and POST <code>token_ws</code> redirects for Webpay Plus in your Filament panel.</p>
+      <img class="logo-lockup" src="brand/webpay-plus.png" alt="Webpay Plus">
+      <h1>Payments with <span>Webpay Plus</span></h1>
+      <p class="lead">Credentials UI, official Transbank SDK helpers, and POST <code>token_ws</code> redirects inside your Filament panel.</p>
       <div class="pills">
         <div class="pill">Create / Commit / Refund</div>
-        <div class="pill">Multi-tenant ready</div>
+        <div class="pill alt">Multi-tenant ready</div>
         <div class="pill">ES · EN</div>
       </div>
     </div>
     <div class="card-wrap">
       <div class="card">
+        <div class="accent-bar"></div>
         <div class="card-head">
           <div class="brand">
-            <div class="logo">WP</div>
-            Webpay Plus credentials
+            <img src="brand/webpay-plus.png" alt="Webpay Plus">
           </div>
           <div class="env">Integration</div>
         </div>
@@ -196,7 +204,7 @@
             </div>
           </div>
           <div class="footer">
-            <div class="hint">Official Transbank SDK · Webpay Plus</div>
+            <div class="hint">Official Transbank SDK</div>
             <div class="btn">Save</div>
           </div>
         </div>
