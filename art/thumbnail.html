@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Transbank Webpay — thumbnail</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1280px; height: 720px; overflow: hidden; font-family: "Segoe UI", ui-sans-serif, system-ui, sans-serif; }
+    .stage {
+      width: 1280px; height: 720px;
+      background:
+        radial-gradient(700px 420px at 70% 30%, rgba(0,163,224,.22), transparent 60%),
+        linear-gradient(145deg, #ffffff, #eef4f9);
+      display: grid; place-items: center;
+      padding: 48px;
+    }
+    .panel {
+      width: 920px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 22px;
+      box-shadow: 0 30px 60px rgba(15,23,42,.12);
+      padding: 42px 48px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .mark {
+      width: 96px; height: 96px; border-radius: 24px;
+      background: #0b1f33; color: #00A3E0;
+      display: grid; place-items: center;
+      font-weight: 800; font-size: 28px; letter-spacing: -0.05em;
+    }
+    h1 { font-size: 44px; letter-spacing: -0.03em; color: #0b1f33; margin-bottom: 10px; }
+    h1 span { color: #00A3E0; }
+    p { font-size: 20px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="panel">
+      <div class="mark">WP</div>
+      <div>
+        <h1>Transbank <span>Webpay</span></h1>
+        <p>Filament v5 · Webpay Plus payments for Chile</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

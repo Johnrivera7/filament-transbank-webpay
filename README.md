@@ -1,30 +1,29 @@
-# Filament Transbank Webpay
+# Transbank Webpay
 
-Plugin de [Filament](https://filamentphp.com) **v5** para **Transbank Webpay Plus** (Chile): UI de credenciales, logos, redirect POST con `token_ws`, y helpers `create` / `commit` / `status` / `refund` sobre el [SDK oficial](https://github.com/TransbankDevelopers/transbank-sdk-php).
+<img src="https://raw.githubusercontent.com/Johnrivera7/filament-transbank-webpay/main/art/banner.jpg" alt="Transbank Webpay Filament plugin" class="filament-hidden" />
 
-Repositorio: https://github.com/Johnrivera7/filament-transbank-webpay
+A Filament v5 plugin that integrates **Transbank Webpay Plus** (Chile) into your Laravel application: credentials UI, logos, POST `token_ws` redirects, and create / commit / status / refund helpers on the [official Transbank SDK](https://github.com/TransbankDevelopers/transbank-sdk-php).
 
-## Requisitos
+## Requirements
 
 - PHP 8.2+
-- Laravel 11 / 12
-- Filament 5
-- Cuenta / comercio Transbank Webpay Plus
+- Laravel 11+ / 12+
+- Filament 5.x
 
-## Instalación
+## Installation
 
 ```bash
 composer require johnrivera7/filament-transbank-webpay
 ```
 
-Publica config (opcional) y assets de imagen (opcional; las vistas ya incluyen SVG inline):
+Optional publishes:
 
 ```bash
 php artisan vendor:publish --tag=filament-transbank-webpay-config
 php artisan vendor:publish --tag=filament-transbank-webpay-assets
 ```
 
-Registra el plugin en tu `PanelProvider`:
+Register the plugin in your `PanelProvider`:
 
 ```php
 use JohnRivera7\FilamentTransbankWebpay\FilamentTransbankWebpayPlugin;
@@ -32,7 +31,6 @@ use JohnRivera7\FilamentTransbankWebpay\FilamentTransbankWebpayPlugin;
 public function panel(Panel $panel): Panel
 {
     return $panel
-        // ...
         ->plugin(
             FilamentTransbankWebpayPlugin::make()
                 ->navigationGroup('Pagos')
@@ -41,24 +39,25 @@ public function panel(Panel $panel): Panel
 }
 ```
 
-### Multi-tenant (recomendado)
-
-Resuelve y persiste credenciales por tenant (ej. `Empresa` / `IntegrationSetting`):
+### Multi-tenant (recommended)
 
 ```php
+use JohnRivera7\FilamentTransbankWebpay\Support\TransbankCredentials;
+
 ->plugin(
     FilamentTransbankWebpayPlugin::make()
-        ->credentialsUsing(function (): \JohnRivera7\FilamentTransbankWebpay\Support\TransbankCredentials {
-            $cfg = /* leer de tu DB */;
-            return \JohnRivera7\FilamentTransbankWebpay\Support\TransbankCredentials::fromArray($cfg);
+        ->credentialsUsing(function (): TransbankCredentials {
+            $cfg = /* read from your DB */;
+
+            return TransbankCredentials::fromArray($cfg);
         })
-        ->persistCredentialsUsing(function (\JohnRivera7\FilamentTransbankWebpay\Support\TransbankCredentials $c): void {
-            /* guardar $c->toArray() en tu DB */
+        ->persistCredentialsUsing(function (TransbankCredentials $credentials): void {
+            /* persist $credentials->toArray() */
         })
 )
 ```
 
-### Single-tenant (.env)
+### Single-tenant (`.env`)
 
 ```env
 TRANSBANK_ENABLED=true
@@ -67,16 +66,15 @@ TRANSBANK_API_KEY=...
 TRANSBANK_ENVIRONMENT=integration
 ```
 
-Sin `persistCredentialsUsing`, la página de settings **no** escribe en disco: úsala solo con callbacks o guarda vía tu propio flujo.
+Without `persistCredentialsUsing()`, the settings page does not write credentials to disk—wire persistence via the callbacks above (or manage `.env` yourself).
 
-## Uso del gateway
+## Gateway usage
 
 ```php
 use JohnRivera7\FilamentTransbankWebpay\FilamentTransbankWebpayPlugin;
 use JohnRivera7\FilamentTransbankWebpay\Services\WebpayPlusGateway;
 
 $gateway = FilamentTransbankWebpayPlugin::get()->gateway();
-// o: WebpayPlusGateway::make(TransbankCredentials::fromConfig());
 
 $payment = $gateway->create(
     buyOrder: 'ORD123',
@@ -91,21 +89,18 @@ return response()->view('filament-transbank-webpay::payment-redirect', [
 ]);
 ```
 
-En el return URL:
+On the return URL:
 
 ```php
 if (WebpayPlusGateway::isAbortReturn($request->all())) {
-    // TBK_* sin token_ws → abort | timeout
     $reason = WebpayPlusGateway::abortReason($request->all()); // aborted|timeout
 }
 
-// Si hay token_ws (aunque también lleguen TBK_*), haz commit:
+// If token_ws is present (even alongside TBK_*), call commit:
 $result = $gateway->commit($request->all());
 ```
 
-## Schema reutilizable
-
-Puedes embeber el formulario de credenciales en otra página Filament:
+## Reusable form schema
 
 ```php
 use JohnRivera7\FilamentTransbankWebpay\Forms\Components\TransbankCredentialsSchema;
@@ -115,13 +110,28 @@ $schema->components([
 ]);
 ```
 
-## Notas de integración
+## Integration notes
 
-- Webpay Plus exige **POST** con `token_ws` (no redirect GET).
-- Integración de prueba: commerce `597055555532` + API Key pública de Transbank.
-- Producción: commerce real + API Key Secret tras validación comercial.
-- En abort/timeout Webpay envía `TBK_*` **sin** `token_ws`. Si llegan juntos, **gana `token_ws`** y debes hacer `commit`.
+- Webpay Plus requires a **POST** redirect with `token_ws` (not a GET query string).
+- Integration sandbox: commerce `597055555532` + Transbank’s public integration API key.
+- Production: real commerce code + API Key Secret after Transbank validation.
+- Abort/timeout returns send `TBK_*` **without** `token_ws`. If both arrive, **`token_ws` wins**—run `commit`.
 
-## Licencia
+## Testing
+
+```bash
+composer install
+./vendor/bin/phpunit
+```
+
+## Security
+
+See [SECURITY.md](SECURITY.md).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## License
 
 MIT
