@@ -60,7 +60,7 @@ A Filament plugin that integrates **Transbank Webpay Plus** (Chile) into your La
 ## Installation
 
 ```bash
-composer require johnrivera7/filament-transbank-webpay
+composer require johnrivera7/filament-transbank-webpay:^1.0
 ```
 
 Optional publishes:

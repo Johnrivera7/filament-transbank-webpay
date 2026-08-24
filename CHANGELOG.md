@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 1.0.1 — 2026-08-24
+
+- README: document stable install with `^1.0` constraint.
 
 ## 1.0.0 — 2026-08-14
 
